@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  non-override:
+    container_name: non-override
+    image: test
+    build: .
+
+  entrypoint-override:
+    container_name: entrypoint-override
+    image: test
+    entrypoint: echo "overwride entrypoint. parameters =>"
+
+  command-override:
+    container_name: command-override
+    image: test
+    command: foo bar baz
+
+  both-override:
+    container_name: both-override
+    image: test
+    entrypoint: echo "overwride entrypoint. parameters => "
+    command: foo bar baz
